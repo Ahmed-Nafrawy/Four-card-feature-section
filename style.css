@@ -1,0 +1,220 @@
+/* Importing google fonts **************************************** */
+@import url("https://fonts.googleapis.com/css2?family=Coiny&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Young+Serif&display=swap");
+/* CSS Reset ***************************************************** */
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  scroll-behavior: smooth;
+  transition: 0.3s all;
+}
+
+/* Setting Variables ********************************************* */
+:root {
+  /* Colors */
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+
+  /* Font weight */
+  --fw-200: 200;
+  --fw-400: 400;
+  --fw-600: 600;
+
+  /* Font Family */
+  --ff-paragraph: "Poppins", sans-serif;
+
+  /* Typography */
+  --fs-normal: 1rem;
+  --fs-medium: 1.35rem;
+  --fs-large: 2.7rem;
+}
+
+/* Styling the body *********************************************** */
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 20px;
+  font-size: var(--fs-normal);
+  background-color: var(--Very-Light-Gray);
+  font-family: var(--ff-paragraph);
+}
+
+/* Styling the Headings *********************************************** */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styling the Text ************************************************** */
+
+.text {
+  width: 50%;
+}
+
+.heading {
+  font-size: var(--fs-large);
+  font-weight: var(--fw-600);
+  color: var(--Very-Dark-Blue);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.heading--text {
+  font-size: var(--fs-large);
+  font-weight: var(--fw-200);
+  color: var(--Very-Dark-Blue);
+  text-align: center;
+}
+
+.description {
+  font-size: var(--fs-normal);
+  font-weight: var(--fw-200);
+  color: var(--Very-Dark-Blue);
+  margin-bottom: 5rem;
+  text-align: center;
+}
+/* Styling the cards *********************************************** */
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.middle--cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card {
+  background-color: var(--Very-Light-Gray);
+  box-shadow: 0 10px 10px rgba(76, 78, 97, 0.2);
+  padding: 2rem;
+}
+
+.card--1,
+.card--2,
+.card--3,
+.card--4 {
+  display: flex;
+  flex-flow: column;
+  align-items: start;
+  gap: 0.5rem;
+  border-radius: 8px;
+  max-width: 25rem;
+  height: 17rem;
+}
+
+.card--1 {
+  border-top: 6px solid var(--Cyan);
+}
+.card--2 {
+  border-top: 6px solid var(--Red);
+}
+.card--3 {
+  border-top: 6px solid var(--Orange);
+}
+.card--4 {
+  border-top: 6px solid var(--Blue);
+}
+
+.card--heading {
+  font-size: var(--fs-medium);
+  font-weight: var(--fw-600);
+  color: var(--Very-Dark-Blue);
+}
+
+.card--description {
+  margin: 0 0 auto;
+  font-size: var(--fs-normal);
+  font-weight: var(--fw-200);
+  color: var(--Very-Dark-Blue);
+}
+
+/* Styling the icons *********************************************** */
+
+.icon {
+  display: block;
+  max-width: 65px;
+  width: 100%;
+  height: auto;
+  align-self: flex-end;
+}
+
+/* Styling the footer (optional) *********************************************** */
+
+.attribution {
+  font-size: var(--fs-medium);
+  color: var(--Very-Dark-Blue);
+}
+
+.attribution a {
+  text-decoration: none;
+  color: var(--Cyan);
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+  color: var(--Blue);
+}
+
+/* Media Queries *********************************************** */
+
+@media (max-width: 50em) {
+  .card--1,
+  .card--2,
+  .card--3,
+  .card--4 {
+    height: 27rem;
+  }
+  .heading {
+    font-size: var(--fs-medium);
+  }
+
+  .heading--text {
+    font-size: var(--fs-medium);
+  }
+  .text {
+    width: 70%;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .card--1,
+  .card--2,
+  .card--3,
+  .card--4 {
+    height: 17rem;
+  }
+
+  .text {
+    width: 100%;
+  }
+}
